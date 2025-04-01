@@ -57,7 +57,7 @@ source devel/setup.bash
 Firstly, run ```source devel/setup.bash```
 
 ### 3.1. **Mai City dataset**
-[Mai City dataset download]()
+[Mai City dataset download](https://www.ipb.uni-bonn.de/data/mai-city-dataset/)
 
 Run with odometry (voxelmap), set saved path of results ``ptcl_save_path`` in ```&project_path&/config/velodyne_maicity.yaml```. Then open a terminal under path ```ws_onlinemesh``` and run:
 ```
@@ -73,7 +73,7 @@ roslaunch online_mesh mapping_maicity_gtpose.launch
 ```
 
 ### 3.2. **KITTI dataset**
-[KITTI dataset download]()
+[KITTI dataset download](https://www.cvlibs.net/datasets/kitti/eval_odometry.php)
 
 Run with odometry (voxelmap), set saved path of results ``ptcl_save_path`` in ```&project_path&/config/velodyne_kitti.yaml```. Then open a terminal under path ```ws_onlinemesh``` and run:
 ```
@@ -89,7 +89,7 @@ roslaunch online_mesh mapping_kitti_gtpose.launch
 ```
 
 ### 3.2. **R3live dataset**
-[R3live dataset download]()
+[R3live dataset download](https://github.com/hku-mars/r3live)
 
 Run with odometry (voxelmap or fastlio), set saved path of results ``ptcl_save_path`` in ```&project_path&/config/avia_r3live.yaml```. Then open a terminal under path ```ws_onlinemesh``` and run:
 ```
