@@ -3,7 +3,7 @@
 
     <arg name="rviz" default="false" />
 
-    <rosparam command="load" file="$(find online_mesh)/config/avia_mesh.yaml" />
+    <rosparam command="load" file="$(find online_mesh)/config/avia_r3live.yaml" />
 
     <node pkg="online_mesh" type="fastlio_mapping" name="fastlio_mapping" output="screen"/>
 
