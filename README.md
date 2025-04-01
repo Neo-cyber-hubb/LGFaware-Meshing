@@ -116,7 +116,7 @@ Evaluate with [mesh-evaluation](https://github.com/Neo-cyber-hubb/mesh-evaluatio
 | N_nonplane | Threshold to fit triangle of isolated points|  |
 | if_save_raw_points | Save subscribed points or not |  |
 | if_quadtree_decimate | Carry out quadtree decimate or not |  |
-| if_gui | Display real-time reconstruction or not | ```true```: can't real-time |
+| if_gui | Display incremental reconstruction or not | ```true```: can't real-time |
 | if_debug | Save np.ply and p.ply or not|  |
 
 
