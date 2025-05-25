@@ -1,11 +1,13 @@
 ## 1. Introduction
 **Paper**
 
-LGFaware-Meshing: Online Mesh Reconstruction from LiDAR Point Cloud with Awareness of Local Geometric Features
+LGFaware-Meshing: Online Mesh Reconstruction from LiDAR Point Cloud with Awareness of Local Geometric Features 
+
+Available at [DOI](x).
 
 **Abstract**
 
-Mesh is one of the most commonly utilized data formats for digital three-dimensional models in most existing 3-D applications. Recently, online mesh reconstruction from light detection and ranging (LiDAR) measurements has garnered significant interest because of its high efficiency. However, due to the lack of adaptability in adjusting vertex density, existing methods tend to generate either over-represented planar mesh or under-represented non-planar mesh. To address this issue, we propose a novel online mesh reconstruction method with a self-adaptive strategy which respectively processes planar and non-planar regions according to local geometric features. For planar regions, we propose a two-step point decimation and mesh reconstruction algorithm to reduce data redundancy based on the observation that the geometric structure of these regions is simple and can be represented by a few key vertices and triangles. For non-planar regions, we design a parallel direct meshing (PDM) algorithm with hole filling mechanism to model objects with complex geometric structure. Moreover, we propose a zipper-based connection strategy to handle the boundaries between planar and non-planar mesh regions. Experimental results demonstrate that our approach outperforms several
+Mesh is one of the most commonly utilized data formats for digital three-dimensional models in most existing 3-D applications. Recently, online mesh reconstruction from light detection and ranging (LiDAR) measurements has garnered significant interest because of its high efficiency. However, due to the lack of adaptability in adjusting vertex density, existing methods tend to generate either over-represented planar mesh or under-represented non-planar mesh. To address this issue, we propose a novel online mesh reconstruction method with a self-adaptive strategy which, respectively, processes planar and non-planar regions according to local geometric features. For planar regions, we propose a two-step point decimation and mesh reconstruction algorithm to reduce data redundancy based on the observation that the geometric structure of these regions is simple and can be represented by a few key vertices and triangles. For non-planar regions, we design a parallel direct meshing (PDM) algorithm with hole filling mechanism to model objects with complex geometric structure. Moreover, we propose a zipper-based connection strategy to handle the boundaries between planar and non-planar mesh regions. Experimental results demonstrate that our approach outperforms several
 state-of-the-art algorithms in terms of mesh quality and memory consumption. Remarkably, the entire process is capable of running in real-time on a standard desktop CPU. Code is available at https://github.com/Neo-cyber-hubb/LGFaware-Meshing.
 
 ## 2. Install
@@ -92,7 +94,7 @@ Run with ground truth pose, set dataset path ```data_dir``` and saved path of re
 roslaunch online_mesh mapping_kitti_gtpose.launch
 ```
 
-### 3.2. **R3live dataset**
+### 3.3. **R3live dataset**
 [R3live dataset download](https://github.com/hku-mars/r3live)
 
 Run with odometry (voxelmap or fastlio), set saved path of results ``ptcl_save_path`` in ```&project_path&/config/avia_r3live.yaml```. Then open a terminal under path ```ws_onlinemesh``` and run:
@@ -103,6 +105,11 @@ Open another terminal under the path of Mai City dataset and run:
 ```
 rosbag play hku_campus_seq_00.bag
 ```
+
+### 3.4. **Newer College dataset example**
+[Example download]()
+
+TODO!
 
 ## 4. Evaluation
 Evaluate with [mesh-evaluation](https://github.com/Neo-cyber-hubb/mesh-evaluation)
