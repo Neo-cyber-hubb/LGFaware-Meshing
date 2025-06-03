@@ -1,0 +1,75 @@
+common:
+    lid_topic:  "/velodyne_points"
+    imu_topic:  "/imu_data"
+
+preprocess:
+    lidar_type: 2                #1 for Livox serials LiDAR, 2 for Velodyne LiDAR, 3 for L515 LiDAR
+    scan_line: 64
+    blind: 1
+    point_filter_num: 1
+    calib_laser: true              # true for KITTI Odometry dataset
+
+mapping:
+    down_sample_size: 0.5
+    max_iteration: 3
+    voxel_size: 3.0
+    max_layer: 4                # 4 layer, 0, 1, 2, 3
+    layer_point_size: [5, 5, 5, 5, 5]
+    plannar_threshold: 0.01
+    max_points_size: 1000
+    max_cov_points_size: 1000
+
+noise_model:
+    ranging_cov: 0.04
+    angle_cov: 0.1
+    acc_cov_scale: 1.0
+    gyr_cov_scale: 0.5
+
+imu:
+    imu_en: false
+    extrinsic_T: [ 0, 0, 0]
+    extrinsic_R: [ 1, 0, 0,
+                   0, 1, 0,
+                   0, 0, 1]
+
+visualization:
+    pub_voxel_map: false
+    publish_max_voxel_layer: 1         # only publish 0,1,2 layer's plane
+    pub_point_cloud: true
+    dense_map_enable: true
+    pub_point_cloud_skip: 1             # publish one points per five points
+
+Result:
+    write_kitti_log: false
+    result_path: ""
+
+mesh:
+    hole_every_n_frame: 10               # 每隔 n 帧一次hole_process
+    angle_resolution: 0.4
+    fov_horizon: 360
+    fov_vertical_up: 2.0
+    fov_vertical_down: 30
+    r_kNN: 5                            # 最近邻计算特征值的框的边长
+    depth_th_normal: 0.5                # 框内 点-中心点深度差 阈值
+    eigenvalue_threshold: 0.0001        # 确定初始平面点的阈值
+    angle_threshold: 5                  # 区域生长 角度相似性阈值 单位度
+    depth_threshold: 0.01               # 区域生长 平面点法向距离阈值 单位m
+    angle_th_spd: 5                     # 相似平面检测，法向角度阈值
+    dis_th_spd: 0.03                    # 相似平面检测，沿法向距离阈值
+    ptsNum_threshold: 40                # 平面点数量阈值
+    dis_resolution: 0.15                 # 平面划分网格的边长
+    grid_ptsNum_threshold: 0            # 确定网格为内部点的点数阈值
+    ptsNum_decimate_threshold: 1000     # 点投影矩阵是否重新计算
+    voxel_resolution: 0.3               # 非平面部分 体素边长
+    points_minimum_scale: 0.05           # 非平面部分 任意两个点之间最小距离
+    r_nonplane: 0.15                     # 非平面部分 最近邻查找距离阈值
+    N_nonplane: 5                       # 非平面部分 拟合三角形的点数阈值
+    max_pts_num: 15000                  # 原始点云数量整除该数进行降采样 TODO
+    if_save_raw_points: false
+    if_quadtree_decimate: true          # 是否进行四叉树简化
+    if_gui: true                        # 是否显示gui
+    if_debug: false
+    ptcl_topic: "/cloud_registered"
+    odo_topic: "/aft_mapped_to_init"
+    ptcl_save_path: "/home/neo/output_onlinemesh"
+    dataset_name: "maicity"

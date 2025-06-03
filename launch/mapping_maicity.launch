@@ -1,0 +1,16 @@
+<launch>
+  <!-- Launch file for velodyne16 VLP-16 LiDAR -->
+
+    <arg name="rviz" default="false" />
+
+    <rosparam command="load" file="$(find online_mesh)/config/velodyne_maicity.yaml" />
+
+    <node pkg="online_mesh" type="voxel_mapping_odom" name="voxel_mapping_odom" output="screen"/>
+
+    <node pkg="online_mesh" type="my_mesh" name="my_mesh" output="screen"/>
+
+    <group if="$(arg rviz)">
+    <node launch-prefix="nice" pkg="rviz" type="rviz" name="rviz" args="-d $(find online_mesh)/rviz_cfg/voxel_mapping.rviz" />
+    </group>
+
+</launch>
