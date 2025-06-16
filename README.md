@@ -3,7 +3,7 @@
 
 LGFaware-Meshing: Online Mesh Reconstruction from LiDAR Point Cloud with Awareness of Local Geometric Features 
 
-Available at [DOI](x).
+Available at [DOI](https://www.tandfonline.com/doi/full/10.1080/10095020.2025.2502481?scroll=top&needAccess=true#abstract).
 
 **Abstract**
 
